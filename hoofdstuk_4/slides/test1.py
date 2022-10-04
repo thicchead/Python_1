@@ -29,9 +29,55 @@
 #         print(i)
 
 # # Opdracht 9
-totaal = 0
-for i in range(29):
-    leeftijd = int(input("Leeftijd student " + str(i + 1) + " = "))
-    totaal += leeftijd
+# totaal = 0
+# for i in range(29):
+#     leeftijd = int(input("Leeftijd student " + str(i + 1) + " = "))
+#     totaal += leeftijd
+#
+# print(totaal / 28)
 
-print(totaal / 28)
+# for i in "metehan":
+#     print(i, end="")
+# print()
+
+# fruit = "appel"
+# for letter in fruit:
+#     print(letter)
+# print("Klaar")
+
+# for x in (10, 20, 30, 40):
+#     print(x)
+
+# # Opdracht 15
+# getal = int(input("Getal = "))
+#
+# while getal % 5 != 0:
+#     if getal % 2 == 0:
+#         print(getal)
+#     else:
+#         print("Niet deelbaar door 2 of 5")
+#
+#     getal = int(input("Getal = "))
+#
+# print("Einde")
+
+# # Opdracht 17
+# getal = int(input("Getal = "))
+#
+# while getal != 0:
+#     print(getal ** 2)
+#
+#     getal = int(input("Getal = "))
+
+# # Opdracht 18
+# getal = int(input("Getal = "))
+#
+# while getal < 0 or getal > 10:
+#     print("Fout getal")
+#
+#     getal = int(input("Getal = "))
+
+# for i in range(1, 5):
+#     for j in range(i):
+#         print("x", end=" ")
+#     print()
