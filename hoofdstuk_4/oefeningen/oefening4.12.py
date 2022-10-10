@@ -1,12 +1,13 @@
 familienaam = input("Naam: ")
 totale_premie = 0
+hoogste_premie = 0
 
 while familienaam != "/" and familienaam != "*":
     voornaam = input("Voornaam: ")
     dienstjaren = int(input("Dienstjaren: "))
 
-    while dienstjaren < 0 or dienstjaren > 40:
-        print("Teveel of te weinig!")
+    while dienstjaren <= 0 or dienstjaren >= 40:
+        print("Te veel of te weinig!")
         dienstjaren = int(input("Dienstjaren: "))
 
     premie = 25 * dienstjaren
@@ -15,8 +16,6 @@ while familienaam != "/" and familienaam != "*":
         premie = 0
 
     totale_premie += premie
-
-    hoogste_premie = 0
 
     if premie > hoogste_premie:
         hoogste_premie = premie

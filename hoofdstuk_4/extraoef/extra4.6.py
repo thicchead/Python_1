@@ -1,8 +1,8 @@
-# hoogte = int(input("Hoogte: "))
-# breedte = int(input("Breedte: "))
+hoogte = int(input("Hoogte: "))
+breedte = int(input("Breedte: "))
 
-hoogte = 4
-breedte = 6
+# hoogte = 4
+# breedte = 6
 
 # for i in range(1, hoogte + 1):
 #     for j in range(1, breedte + 1):
