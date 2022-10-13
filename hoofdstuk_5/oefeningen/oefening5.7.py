@@ -24,14 +24,19 @@ def bereken_brieven(dagen):
 def main():
     naam = input("Naam: ")
 
+    totaal_aantal_dagen = 0
+
     while naam != "xx":
         aantal_boeken = int(input("Aantal boeken: "))
         aantal_dagen_overschreden = int(input("Aantal dagen overschreden: "))
 
+        totaal_aantal_dagen += aantal_dagen_overschreden
+
         print(bereken_boete(aantal_boeken, aantal_dagen_overschreden))
-        print(bereken_brieven(aantal_dagen_overschreden))
 
         naam = input("Naam: ")
+
+    print(bereken_brieven(totaal_aantal_dagen))
 
 
 if __name__ == '__main__':

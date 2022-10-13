@@ -15,14 +15,18 @@ def main():
     print(random_getal)
 
     aantal_gokken = 0
-    while aantal_gokken < 4:
+    while aantal_gokken < 3:
         gebruiker_gok = int(input("Uw gok: "))
         geef_feedback(random_getal, gebruiker_gok)
 
         if gebruiker_gok != random_getal:
             aantal_gokken += 1
         else:
-            aantal_gokken += 3
+            aantal_gokken += 10
+
+        if aantal_gokken == 3 and gebruiker_gok != random_getal:
+            print("Teveel gegokt!")
+
 
 if __name__ == '__main__':
     main()
