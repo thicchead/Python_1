@@ -1,11 +1,11 @@
 from random import randint
 
 
-def geef_feedback(random_getal, gok):
-    if gok < random_getal:
+def geef_feedback(getal, gok):
+    if gok < getal:
         print("Hoger")
-    elif gok == random_getal:
-        print("Proficiat, getal geraden")
+    elif gok == getal:
+        print("Proficiat, getal geraden!")
     else:
         print("Lager")
 
@@ -15,7 +15,7 @@ def main():
     print(random_getal)
 
     aantal_gokken = 0
-    while aantal_gokken < 3:
+    while aantal_gokken < 4:
         gebruiker_gok = int(input("Uw gok: "))
         geef_feedback(random_getal, gebruiker_gok)
 
@@ -24,7 +24,7 @@ def main():
         else:
             aantal_gokken += 10
 
-        if aantal_gokken == 3 and gebruiker_gok != random_getal:
+        if aantal_gokken == 4 and gebruiker_gok != random_getal:  # Zelf erbij gezet zodat het spel niet abrupt stopt na de 3e keer fout raden
             print("Teveel gegokt!")
 
 
