@@ -9,8 +9,8 @@ def main():
 
     for i in range(kleinste_string):
         if s1[i] == s2[i]:
-            print(i, end=" ")
-            print(str(s1[i]))
+            print(s1[i], end=" ")
+            print(i)
 
 
 if __name__ == '__main__':

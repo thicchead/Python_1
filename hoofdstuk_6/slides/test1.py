@@ -7,19 +7,29 @@ def main():
 
     # print(naam)
     # print(voornaam)
+
     # print(naam + voornaam)
     # print(2 * naam)
     # print(len(voornaam))
     # print(len(naam))
+
     # for letter in naam:
     #     if letter in voornaam:
     #         print(letter)
+
     # print(voornaam[0])
     # print(voornaam[-1])
     # print(voornaam[0:5])
     # print(voornaam[:2])
     # print(voornaam[2:])
 
+    # for i in range(len(naam)):
+    #     print(naam[i])
+    #
+    # for letter in naam:
+    #     print(letter)
+
+    print("ik ben {:<5d} jaar".format(18))
 
 
 if __name__ == '__main__':
