@@ -11,10 +11,12 @@ def genereer_offertenummer(jaar, nm, prijs):
 
 
 def bereken_totaal(opp, motor, kleur):
-    totaalprijs = opp * 113.5 + motor
+    basisprijs = opp * 113.5 + motor
 
     if kleur == "J":
-        totaalprijs *= 1.10
+        basisprijs *= 1.10
+
+    totaalprijs = basisprijs + motor
 
     return totaalprijs
 
