@@ -2,8 +2,7 @@ HUIDIG_JAAR = 2022
 
 
 def genereer_offertenummer(jaar, nm, prijs):
-    prijs = str(int(prijs))
-    prijs = prijs[::-1]
+    prijs = str(int(prijs))[::-1]
 
     offertenummer = str(jaar) + "_" + nm.upper() + "_" + prijs
 
