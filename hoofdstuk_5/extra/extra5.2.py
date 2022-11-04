@@ -4,7 +4,7 @@ def bereken_gemiddelde_aanwezigheid(aanwezigheid, bezoekers):
     gemiddelde_uren = totaal_minuten // 60
     gemiddelde_minuten = totaal_minuten % 60
 
-    print("Gemiddeld waren de bezoekers " + str(gemiddelde_uren) + " uren aanwezig en " + str(gemiddelde_minuten) + " minuten")
+    print("Gemiddeld waren de bezoekers " + str(gemiddelde_uren) + " uren en " + str(gemiddelde_minuten) + " minuten aanwezig")
 
 
 def bereken_duur_bezoek(uur_binnenkomen, minuut_binnenkomen, uur_buitenkomen, minuut_buitenkomen):
