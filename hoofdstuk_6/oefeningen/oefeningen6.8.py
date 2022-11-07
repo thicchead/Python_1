@@ -4,6 +4,7 @@ def teken_driehoek(gr, letter):
             print(letter, end=" ")
             letter = ord(letter) + 1
             letter = chr(letter)
+            # letter = chr(ord(letter) + 1)  --> beter
 
             if letter > "Z":
                 letter = "A"

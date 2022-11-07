@@ -6,14 +6,14 @@ def main():
 
     gemiddelde = sum(getallenlijst) / len(getallenlijst)
 
-    kleiner = 0
+    kleiner_dan_gemiddelde = 0
     for element in getallenlijst:
         if element < gemiddelde:
-            kleiner += 1
+            kleiner_dan_gemiddelde += 1
 
     print(round(gemiddelde, 1))
-    print(kleiner)
-    print(str(round(100 / len(getallenlijst) * kleiner, 2)) + "%")
+    print(kleiner_dan_gemiddelde)
+    print(str(round(100 / len(getallenlijst) * kleiner_dan_gemiddelde, 2)) + "%")
 
 
 if __name__ == '__main__':

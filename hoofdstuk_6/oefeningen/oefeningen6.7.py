@@ -14,7 +14,7 @@ def main():
     tekst = input("Tekst: ")
     # getal = 4
     getal = randint(1, 12) * 2
-    # print(getal)
+    print(getal)
     print(encrypteer(tekst, getal))
 
 
