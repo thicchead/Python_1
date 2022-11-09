@@ -3,6 +3,7 @@ def main():
     code = int(input("Code: "))
 
     kandidatenlijst = [0] * AANTAL_KANDIDATEN
+    kandidatennamen = ["An Janssen", "Bart Vriends", "Andries Michiels", "Inge Kaas"]
     aantal = 0
 
     while code != 0:
@@ -19,9 +20,15 @@ def main():
 
         code = int(input("Code: "))
 
-    for kandidaat in kandidatenlijst:
-        print(kandidaat, end=", ")
-        print(round(100 / aantal * kandidaat, 1))
+    # for kandidaat in kandidatenlijst:
+    #     print(kandidaat, end=", ")
+    #     print(round(100 / aantal * kandidaat, 1))
+
+    print(str(aantal) + " totale stemmen")
+
+    for i in range(AANTAL_KANDIDATEN):
+        print(kandidatennamen[i] + ": " + str(kandidatenlijst[i]), end=" = ")
+        print(str(round(100 / aantal * kandidatenlijst[i], 1)) + "%")
 
 
 if __name__ == '__main__':
