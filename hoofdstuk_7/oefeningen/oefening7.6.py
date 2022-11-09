@@ -14,7 +14,7 @@ def bepaal_sterrenbeeld(datum):
 
     sterrenbeeld = 0
 
-    for i in range(len(sterrenbeelden)):
+    for i in range(len(sterrenbeelden) + 1):
         if i == verjaardag[1]:
             sterrenbeeld = sterrenbeelden[i - 2]
 

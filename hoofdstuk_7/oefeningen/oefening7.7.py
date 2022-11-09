@@ -1,52 +1,41 @@
-def print_finale_lijst(gegevens, juiste_ant, aantal_deelnemers):
-    deelnemersnummer = gegevens[0]
-    leeftijd = bepaal_leeftijd(gegevens)
-    tijd = bepaal_tijd(gegevens)
-    punten = bepaal_punten(juiste_ant, gegevens)
-
-    for i in range(aantal_deelnemers):
-        print(str(aantal_deelnemers) + ". " + str(deelnemersnummer) + " " + str(leeftijd) + " jaar " + str(tijd) + " " + str(punten) + " ptn")
-
-
-def bepaal_tijd(gegevens):  # 60 minuten is een uur erbij doen
-    aantal_seconden = int(gegevens[3])
+def bepaal_tijd(totale_tijd):  # 60 minuten is een uur erbij doen
     """uren = tijd // 3600
     rest = tijd % 3600
     minuten = rest // 60
     seconden = rest % 60"""
-    aantal_uren = aantal_seconden // 3600
-    aantal_minuten = (aantal_seconden - 3600 * aantal_uren) // 60
-    aantal_seconden = aantal_seconden - 3600 * aantal_uren - 60 * aantal_uren
+    totale_tijd = int(totale_tijd)
+    aantal_uren = totale_tijd // 3600
+    aantal_minuten = (totale_tijd - 3600 * aantal_uren) // 60
+    aantal_seconden = totale_tijd - 3600 * aantal_uren - 60 * aantal_uren
     if aantal_seconden >= 30:
         aantal_minuten += 1
 
     return str(aantal_uren) + "u " + str(aantal_minuten) + "m"
 
 
-def bepaal_leeftijd(gegevens):
+def bepaal_leeftijd(gebdatum):
     vandaag = [7, 11, 2022]
-    geboortedatum = gegevens[1].split("/")
+    verjaardag = gebdatum.split("/")
 
-    for i in range(len(geboortedatum)):
-        geboortedatum[i] = int(geboortedatum[i])
+    for i in range(len(verjaardag)):
+        verjaardag[i] = int(verjaardag[i])
 
-    leeftijd = vandaag[-1] - geboortedatum[-1]
-    if vandaag[-2] < geboortedatum[-2]:
+    leeftijd = vandaag[-1] - verjaardag[-1]
+    if vandaag[-2] < verjaardag[-2]:
         leeftijd -= 1
 
-    if vandaag[-2] == geboortedatum[-2]:
-        if vandaag[-3] < geboortedatum[-3]:
+    if vandaag[-2] == verjaardag[-2]:
+        if vandaag[-3] < verjaardag[-3]:
             leeftijd -= 1
 
     return leeftijd
 
 
-def bepaal_punten(juist, gegevens):
+def bepaal_punten(juist, antwoorden_gebruiker):
     punten = 20
-    deelnemer_antwoord = gegevens[2]
 
     antwoorden = []
-    for antwoord in deelnemer_antwoord:
+    for antwoord in antwoorden_gebruiker:
         antwoorden.append(antwoord)
 
     juiste_antwoorden = []
@@ -66,18 +55,36 @@ def main():
     juiste_antwoorden = input("Juiste antwoorden: ").upper()
     deelnemer_gegevens = input("Gegevens deelnemer: ").upper()
 
+    deelnemersnummers = []
+    geboortedatumlijst = []
+    antwoordenlijst = []
+    tijd_in_sec = []
+    puntenlijst = []
+
     aantal = 0
 
     while deelnemer_gegevens != "0":
         gegevenslijst = deelnemer_gegevens.split(" ")
-        aantal += 1
+        nummer = gegevenslijst[0]
+        geboortedatum = gegevenslijst[1]
+        antwoorden = gegevenslijst[2]
+        tijd = gegevenslijst[3]
 
-        print_finale_lijst(gegevenslijst, juiste_antwoorden, aantal)
+        deelnemersnummers.append(nummer)
+        geboortedatumlijst.append(bepaal_leeftijd(geboortedatum))
+        antwoordenlijst.append(antwoorden)
+        tijd_in_sec.append(bepaal_tijd(tijd))
+        puntenlijst.append(bepaal_punten(juiste_antwoorden, antwoorden))
+
+        aantal += 1
 
         deelnemer_gegevens = input("Gegevens deelnemer: ").upper()
 
-    """huge arrays on top, append bij elke invoer, op het einde dan een for loop met
+    """huge arrays on top, append bij elke invoer, op het einde een for loop met
     formatting, en huge_array[i] op de juiste plaats zetten dan"""
+
+    for i in range(aantal):
+        print(str(i + 1) + '. {} {} jaar {} {} ptn'.format(str(deelnemersnummers[i]), str(geboortedatumlijst[i]), str(tijd_in_sec[i]), str(puntenlijst[i])))
 
 
 if __name__ == '__main__':
