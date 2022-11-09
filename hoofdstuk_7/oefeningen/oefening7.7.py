@@ -13,10 +13,11 @@ def bepaal_tijd(totale_tijd):  # 60 minuten is een uur erbij doen
     return str(aantal_uren) + "u " + str(aantal_minuten) + "m"
 
 
-def bepaal_leeftijd(gebdatum):
-    vandaag = [7, 11, 2022]
+def bepaal_leeftijd(vandaag, gebdatum):
     verjaardag = gebdatum.split("/")
 
+    for i in range(len(vandaag)):
+        vandaag[i] = int(vandaag[i])
     for i in range(len(verjaardag)):
         verjaardag[i] = int(verjaardag[i])
 
@@ -54,6 +55,8 @@ def bepaal_punten(juist, antwoorden_gebruiker):
 def main():
     juiste_antwoorden = input("Juiste antwoorden: ").upper()
     deelnemer_gegevens = input("Gegevens deelnemer: ").upper()
+    vandaag = input("Vandaag: ")
+    vandaag = vandaag.split("/")
 
     deelnemersnummers = []
     geboortedatumlijst = []
@@ -71,7 +74,7 @@ def main():
         tijd = gegevenslijst[3]
 
         deelnemersnummers.append(nummer)
-        geboortedatumlijst.append(bepaal_leeftijd(geboortedatum))
+        geboortedatumlijst.append(bepaal_leeftijd(vandaag, geboortedatum))
         antwoordenlijst.append(antwoorden)
         tijd_in_sec.append(bepaal_tijd(tijd))
         puntenlijst.append(bepaal_punten(juiste_antwoorden, antwoorden))
